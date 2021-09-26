@@ -1,3 +1,7 @@
+Hi. Welcome to my first Angular project.
+
+
+
 # FirstAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
