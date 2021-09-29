@@ -1,5 +1,12 @@
-<ul>
-    <li *ngFor="let item of data.data">
-        {{item.name}}
-    </li>
-</ul>
+<div class="userlist">
+  <h3><b *ngIf="pagination">Listing {{data.meta.pagination.limit}} of {{data.meta.pagination.total}} Users</b></h3> <!--pagination need to be handle--->
+  <mat-card *ngFor="let item of data.data">
+    <mat-card-title>{{item.name}}</mat-card-title>
+    <mat-card-content>{{item.email}}</mat-card-content>
+    <mat-card-actions>
+      <a [routerLink]="['/users/view',item.id]">View</a>|
+      <a [routerLink]="['/users/edit',item.id]">Edit</a>|
+      <a [routerLink]="['/users/delete',item.id]">Delete</a>|
+    </mat-card-actions>
+  </mat-card>
+</div>

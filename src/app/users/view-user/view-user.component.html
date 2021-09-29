@@ -1,1 +1,7 @@
-<p>view-user works!</p>
+<mat-card *ngIf="userDetails">
+    <mat-card-title>{{userDetails.data.name}}</mat-card-title>
+    <mat-card-content>ID: {{userDetails.data.id}}</mat-card-content>
+    <mat-card-content>Email: {{userDetails.data.email}}</mat-card-content>
+    <mat-card-content>Gender: {{userDetails.data.gender}}</mat-card-content>
+    <mat-card-content>Status: {{userDetails.data.status}}</mat-card-content>
+</mat-card>

@@ -15,4 +15,8 @@ export class UserService {
   listUsers(){
     return this.http.get(this.baseUrl+ 'users?access-token=${TOKEN}');
   }
+
+  viewUser(id : String){
+    return this.http.get(this.baseUrl+ 'users/'+ id +'?access-token=${TOKEN}');
+  }
 }

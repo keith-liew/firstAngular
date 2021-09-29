@@ -4,8 +4,9 @@
     height: 85%;
     margin: 10px;
     border: 1px solid #555;
-  }
+}
   
-  .sidebar {
-    width: 150px;
+.sidebar {
+  max-width: 200px;
+  min-width: 80px;
 }

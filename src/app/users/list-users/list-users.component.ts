@@ -9,8 +9,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ListUsersComponent implements OnInit {
 
-  listUsers : any;
   data : any= [];
+  meta : any= [];
+  pagination :string = '';
 
   constructor(private userService: UserService) { }
 

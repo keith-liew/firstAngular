@@ -9,11 +9,12 @@ import { LayoutModule } from './layout/layout.module';
 import { UsersModule } from './users/users.module';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     LayoutModule,
     UsersModule,
-    HttpClientModule
+    HttpClientModule,
+    MatListModule,
     
   ],
   providers: [UserService],

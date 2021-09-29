@@ -4,7 +4,10 @@ import { ListUsersComponent } from './list-users/list-users.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
-
+import { MatListModule } from '@angular/material/list';
+import { RouterModule } from '@angular/router';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -12,10 +15,14 @@ import { AddUserComponent } from './add-user/add-user.component';
     ListUsersComponent,
     ViewUserComponent,
     DeleteUserComponent,
-    AddUserComponent
+    AddUserComponent,
+    EditUserComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatListModule,
+    RouterModule,
+    MatCardModule,
   ]
 })
 export class UsersModule { }
