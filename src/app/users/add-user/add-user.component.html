@@ -1,1 +1,48 @@
-<p>add-user works!</p>
+<mat-card>
+
+    <mat-card-title>Create User</mat-card-title>
+
+    <mat-card-content>
+        <form [formGroup]="addUserForm" (ngSubmit)="createUser()">
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="First and Last" formControlName="name">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </p>
+
+
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your email</mat-label>
+                    <input matInput placeholder="pat@example.com" formControlName="email" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+
+
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Gender</mat-label>
+                    <mat-select formControlName= 'gender'>
+                        <mat-option value="Male">Male</mat-option>
+                        <mat-option value="Female">Female</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName = 'status'>
+                        <mat-option value="Active">Active</mat-option>
+                        <mat-option value="Inactive">Inactive</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </p>
+
+            <button type="submit" mat-raised-button color="primary">Create</button>
+        </form>
+    </mat-card-content>
+</mat-card>

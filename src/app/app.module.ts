@@ -11,6 +11,8 @@ import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,14 @@ import { MatListModule } from '@angular/material/list';
     UsersModule,
     HttpClientModule,
     MatListModule,
-    
   ],
-  providers: [UserService],
+  providers: [UserService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

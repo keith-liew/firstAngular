@@ -8,8 +8,13 @@ import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { MatCardModule } from '@angular/material/card';
-
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatOptionModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     ListUsersComponent,
@@ -20,9 +25,16 @@ import { MatCardModule } from '@angular/material/card';
   ],
   imports: [
     CommonModule,
-    MatListModule,
     RouterModule,
+    MatButtonModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatInputModule,
+    MatIconModule,
+    MatOptionModule,
+    MatSelectModule,
+    ReactiveFormsModule,
   ]
 })
 export class UsersModule { }
