@@ -33,4 +33,8 @@ export class UserService {
   deleteUser(id: string){
     return this.http.delete(this.baseUrl+'users/'+id);
   }
+
+  editUser(id:any, userObj:any){
+    return this.http.put(this.baseUrl+ 'users/'+id , userObj);
+  }
 }
