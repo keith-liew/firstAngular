@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { User } from '../users/list-users/list-users.component';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +20,16 @@ export class UserService {
   //todos
   constructor(private http: HttpClient) { }
 
-  listUsers(){
-    return this.http.get(this.baseUrl+ 'users');
+  listUsers(): Observable<User[]>{
+    return this.http.get<User[]>(this.baseUrl+ 'users');
+  }
+
+  listUsersPage(page:number): Observable<User[]>{
+    return this.http.get<User[]>(this.baseUrl+ 'users?page='+ page);
+  }
+
+  listUsersEmail(email:string): Observable<User[]>{
+    return this.http.get<User[]>(this.baseUrl+ 'users?email='+ email);
   }
 
   viewUser(id : String){
